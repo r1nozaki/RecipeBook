@@ -6,12 +6,18 @@ import DishCard from './DishCard';
 const PopularRecipe = () => {
   const [recipes, setRecipes] = useState([]);
 
-  const { getPopularRecipes, process, setProcess } = DishesService();
+  const { getWaffles, getPancakes, getHotChocolate, process, setProcess } =
+    DishesService();
 
   useEffect(() => {
-    getPopularRecipes().then(data => {
-      setRecipes(data);
-    });
+    Promise.all([getWaffles(), getPancakes(), getHotChocolate()])
+      .then(dataArrays => {
+        const merged = dataArrays.flat();
+        setRecipes(merged);
+      })
+      .catch(() => {
+        setProcess('error');
+      });
   }, []);
 
   return (
