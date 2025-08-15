@@ -1,12 +1,15 @@
+import { useLocation } from 'react-router';
 import Header from './Header';
 import Footer from './Footer';
 
 const Layout = ({ children }) => {
+  const location = useLocation();
+  const hideLayout = location.pathname.includes('/404');
   return (
     <>
-      <Header />
-      <main>{children}</main>
-      <Footer />
+      {!hideLayout && <Header />}
+      {hideLayout ? children : <main>{children}</main>}
+      {!hideLayout && <Footer />}
     </>
   );
 };
