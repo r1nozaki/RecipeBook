@@ -12,7 +12,7 @@ const Header = () => {
     <header className='w-full h-36'>
       <div className='w-full h-7.5 bg-yellow-300'></div>
       <div className='flex justify-between items-center w-full py-8.5 px-19.5'>
-        <Link to='/home'>
+        <Link to='/'>
           <div className='flex items-center gap-2'>
             <FiCoffee size={28} />
             <span className='text-xl font-bold'>RecipeBook</span>

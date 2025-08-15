@@ -32,7 +32,7 @@ const DishesService = () => {
       id: dish.id,
       image: dish.image,
       title: dish.title,
-      content: dish.summary.replace(/<[^>]+>/g, '').slice(0, 101) + '...',
+      content: dish.summary.replace(/<[^>]+>/g, '').slice(0, 61) + '...',
     };
   };
 

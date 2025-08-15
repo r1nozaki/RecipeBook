@@ -25,7 +25,7 @@ const PopularRecipe = () => {
       <h1 className='mx-auto block w-60 text-bold text-4xl'>Recent recipes</h1>
 
       {setContent(process, () => (
-        <div className='grid grid-cols-3 mt-14.5'>
+        <div className='grid grid-cols-3 mt-14.5 justify-center place-items-center'>
           {recipes.map(dish => (
             <DishCard
               key={dish.id}

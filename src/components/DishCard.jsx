@@ -9,8 +9,11 @@ const DishCard = ({ image, title, content }) => {
         />
       </div>
       <div className='px-9.5 pt-7.5 pb-12'>
-        <h1 className='text-2xl font-bold h-10'>{title}</h1>
+        <h1 className='text-2xl font-bold h-15 mb-3'>{title}</h1>
         <p className='text-lg w-82'>{content}</p>
+        <button className='w-45 h-10 rounded-xl bg-yellow-300 text-center mt-12 text-lg font-bold transition duration-300 ease-in-out transform hover:scale-105 hover:bg-yellow-400 hover:cursor-pointer'>
+          See recipe
+        </button>
       </div>
     </div>
   );
