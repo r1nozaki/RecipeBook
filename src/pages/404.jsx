@@ -21,10 +21,15 @@ const Page404 = () => {
           <span className='text-5xl font-semibold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
             Page not found
           </span>
-          <div className='absolute top-120 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-2 bg-yellow-300 rounded-lg mt-6 text-white p-3 transition duration-300 easy-in-out transform hover:scale-105 hover:cursor-pointer'>
-            <Link to='/'>Go home</Link>
-            <FaLongArrowAltRight />
-          </div>
+
+          <Link to='/'>
+            {
+              <div className='absolute top-120 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-2 bg-yellow-300 rounded-lg mt-6 text-white p-3 transition duration-300 easy-in-out transform hover:scale-105 hover:cursor-pointer'>
+                <span>Go to home</span>
+                <FaLongArrowAltRight />
+              </div>
+            }
+          </Link>
         </div>
       </div>
     </section>

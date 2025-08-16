@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import DishesService from '../services/DishesService';
-import setContent from '../utils/setContent';
+import DishesService from '../../services/DishesService';
+import setContent from '../../utils/setContent';
 import DishCard from './DishCard';
 
 const PopularRecipe = () => {
@@ -22,7 +22,9 @@ const PopularRecipe = () => {
 
   return (
     <section className='w-full px-19.5 pt-22.5 pb-24'>
-      <h1 className='mx-auto block w-60 text-bold text-4xl'>Recent recipes</h1>
+      <h1 className='mx-auto block w-90 text-center font-bold text-4xl'>
+        Most popular recipes
+      </h1>
 
       {setContent(process, () => (
         <div className='grid grid-cols-3 mt-14.5 justify-center place-items-center'>
