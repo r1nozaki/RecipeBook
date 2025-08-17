@@ -1,11 +1,18 @@
 import Banner from '../components/Banner';
-import PopularRecipe from '../components/PopularRecipes/PopularRecipe';
-import RecipesSection from '../components/RecentRecipes/RecentRecipesSection';
+import PopularRecipe from '../components/Recipes/PopularRecipe';
+import RecipesSection from '../components/Recipes/RecentRecipesSection';
+
+import bgBanner from '../assets/bgBanner.png';
 
 const Recipes = () => {
   return (
     <>
-      <Banner />
+      <Banner
+        img={bgBanner}
+        text={
+          'Be inspired, cook with passion, and savor unforgettable moments at the table.'
+        }
+      />
       <PopularRecipe />
       <RecipesSection />
     </>
