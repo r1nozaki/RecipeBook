@@ -29,7 +29,7 @@ const RecipeDetails = () => {
         <>
           <Banner img={recipe.image} text={recipe.title} />
 
-          <div className='min-h-screen px-6 md:px-20 py-12 bg-gray-50'>
+          <div className='px-6 md:px-20 py-12 bg-gray-50'>
             <div className='max-w-4xl mx-auto bg-white rounded-2xl shadow-md p-8'>
               {/* Ingredients */}
               <div>

@@ -1,4 +1,12 @@
+import { useNavigate } from 'react-router';
+
 const RecentDishCard = ({ id, image, title, content }) => {
+  const navigate = useNavigate();
+
+  const seeRecipe = () => {
+    addRecentRecipe({ id, image, title, content }, navigate);
+  };
+
   return (
     <div className='w-full bg-[#F5F2F2] rounded-xl flex'>
       <div className='w-101 h-80.5 rounded-l-xl'>
@@ -7,7 +15,10 @@ const RecentDishCard = ({ id, image, title, content }) => {
       <div className='p-12'>
         <h2>{title}</h2>
         <p>{content}</p>
-        <button className='w-45 h-10 rounded-xl bg-yellow-300 text-center mt-12 text-lg font-bold transition duration-300 ease-in-out transform hover:scale-105 hover:bg-yellow-400 hover:cursor-pointer'>
+        <button
+          onClick={seeRecipe}
+          className='w-45 h-10 rounded-xl bg-yellow-300 text-center mt-12 text-lg font-bold transition duration-300 ease-in-out transform hover:scale-105 hover:bg-yellow-400 hover:cursor-pointer'
+        >
           See recipe
         </button>
       </div>
