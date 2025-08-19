@@ -1,6 +1,6 @@
 import Banner from '../components/Banner';
 import AboutUS from '../components/AboutUs';
-
+import ScrollToTopBtn from '../components/ScollToTop/ScrollToTopBtn';
 import bgBanner from '../assets/bgBanner.png';
 
 const About = () => {
@@ -13,6 +13,7 @@ const About = () => {
         }
       />
       <AboutUS />
+      <ScrollToTopBtn />
     </>
   );
 };

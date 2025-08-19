@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
   return (
     <>
       {!hideLayout && <Header />}
-      {hideLayout ? children : <main>{children}</main>}
+      {hideLayout ? children : <main className='pt-35'>{children}</main>}
       {!hideLayout && <Footer />}
     </>
   );

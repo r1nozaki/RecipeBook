@@ -1,16 +1,19 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router';
-import Layout from './components/Layout';
+
+import Layout from './components/Layout/Layout';
 import HomePage from './pages/HomePage';
 import Recipes from './pages/Recipes';
 import About from './pages/About';
 import RecipeDish from './pages/RecipeDish';
 import Page404 from './pages/404';
+import ScrollToTop from './components/ScollToTop/ScrollToTop';
 
 import './App.css';
 
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <Layout>
         <Routes>
           <Route path='/' element={<HomePage />} />

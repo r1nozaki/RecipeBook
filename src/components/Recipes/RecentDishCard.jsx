@@ -9,8 +9,12 @@ const RecentDishCard = ({ id, image, title, content }) => {
 
   return (
     <div className='w-full bg-[#F5F2F2] rounded-xl flex'>
-      <div className='w-101 h-80.5 rounded-l-xl'>
-        <img src={image} alt={title} className='w-full h-full object-cover' />
+      <div className='w-101 h-80.5 '>
+        <img
+          src={image}
+          alt={title}
+          className='w-full h-full object-cover rounded-l-xl'
+        />
       </div>
       <div className='p-12'>
         <h2>{title}</h2>

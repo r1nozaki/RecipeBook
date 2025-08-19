@@ -1,5 +1,6 @@
 import Banner from '../components/Banner';
 import PopularRecipe from '../components/Recipes/PopularRecipe';
+import ScrollToTopBtn from '../components/ScollToTop/ScrollToTopBtn';
 
 import bgBanner from '../assets/bgBanner.png';
 
@@ -13,6 +14,7 @@ const HomePage = () => {
         }
       />
       <PopularRecipe />
+      <ScrollToTopBtn />
     </>
   );
 };
