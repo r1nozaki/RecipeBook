@@ -33,6 +33,13 @@ const DishesService = () => {
     return _transformRecipe(res);
   };
 
+  const getSearchRecipe = async searchQuery => {
+    const res = await request(
+      `${_apiBase}/complexSearch?query=${searchQuery}&number=5&addRecipeInformation=true&instructionsRequired=true&fillIngredients=true&sort=popularity&apiKey=${_apiKey}`
+    );
+    return res.results.map(_transformDishCard);
+  };
+
   const _transformDishCard = dish => {
     return {
       id: dish.id,
