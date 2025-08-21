@@ -2,6 +2,7 @@ import ErrorMessage from '../components/ErrorMessage';
 import { PuffLoader } from 'react-spinners';
 const setContent = (process, renderFunction) => {
   switch (process) {
+    case 'idle':
     case 'loading':
       return (
         <div className='flex justify-center items-center w-full h-80 '>

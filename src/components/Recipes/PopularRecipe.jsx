@@ -5,15 +5,16 @@ import DishCard from './DishCard';
 
 const PopularRecipe = () => {
   const [recipes, setRecipes] = useState([]);
-
   const { getWaffles, getPancakes, getHotChocolate, process, setProcess } =
     DishesService();
 
   useEffect(() => {
+    setProcess('loading');
     Promise.all([getWaffles(), getPancakes(), getHotChocolate()])
       .then(dataArrays => {
         const merged = dataArrays.flat();
         setRecipes(merged);
+        setProcess('confirmed');
       })
       .catch(() => {
         setProcess('error');
@@ -27,7 +28,7 @@ const PopularRecipe = () => {
       </h1>
 
       {setContent(process, () => (
-        <div className='grid grid-cols-3 mt-14.5 justify-center place-items-center'>
+        <div className='grid grid-cols-3 mt-14.5 justify-center place-items-center gap-6'>
           {recipes.map(dish => (
             <DishCard
               key={dish.id}

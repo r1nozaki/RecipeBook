@@ -5,19 +5,29 @@ import setContent from '../../utils/setContent';
 
 const SearchSection = ({ searchQuery }) => {
   const [searchResult, setSearchResult] = useState([]);
-  const { process, getSearchRecipe } = DishesService();
+  const { process, setProcess, getSearchRecipe } = DishesService();
   useEffect(() => {
-    if (!searchQuery) return;
+    if (!searchQuery) {
+      setSearchResult([]);
+      setProcess('confirmed');
+      return;
+    }
 
-    getSearchRecipe(searchQuery).then(data => {
-      setSearchResult(data);
-    });
+    setProcess('loading');
+    getSearchRecipe(searchQuery)
+      .then(data => {
+        setSearchResult(data);
+        setProcess('confirmed');
+      })
+      .catch(() => {
+        setProcess('error');
+      });
   }, [searchQuery]);
 
   return (
     <section className='min-h-screen'>
       {setContent(process, () => (
-        <div className='flex flex-col gap-6 w-full px-32 justify-center items-center'>
+        <div className='flex flex-col gap-6 w-full px-32 justify-center items-center mt-16'>
           {searchResult.length > 0 ? (
             searchResult.map(searchDish => (
               <RecentDishCard
