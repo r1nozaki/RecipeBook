@@ -1,7 +1,8 @@
 import { Link, NavLink } from 'react-router';
-import { FiSearch, FiCoffee } from 'react-icons/fi';
+import SearchInput from '../Search/SearchInput';
+import { FiCoffee } from 'react-icons/fi';
 
-const Header = () => {
+const Header = ({ setSearchQuery }) => {
   const navItems = [
     { to: '/', label: 'Home' },
     { to: '/recipes', label: 'Recipes' },
@@ -33,14 +34,7 @@ const Header = () => {
             </NavLink>
           ))}
         </nav>
-        <div className='relative'>
-          <input
-            type='search'
-            className='bg-[#F5F2F2] rounded-3xl h-11 w-64.5 pl-12 pr-2'
-            placeholder='Search for recipe'
-          />
-          <FiSearch className='absolute top-3 left-5' size={20} />
-        </div>
+        <SearchInput setSearchQuery={setSearchQuery} />
       </div>
     </header>
   );

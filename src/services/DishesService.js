@@ -35,7 +35,7 @@ const DishesService = () => {
 
   const getSearchRecipe = async searchQuery => {
     const res = await request(
-      `${_apiBase}/complexSearch?query=${searchQuery}&number=5&addRecipeInformation=true&instructionsRequired=true&fillIngredients=true&sort=popularity&apiKey=${_apiKey}`
+      `${_apiBase}/complexSearch?query=${searchQuery}&number=2&addRecipeInformation=true&instructionsRequired=true&fillIngredients=true&sort=popularity&apiKey=${_apiKey}`
     );
     return res.results.map(_transformDishCard);
   };
@@ -71,6 +71,7 @@ const DishesService = () => {
     getPancakes,
     getHotChocolate,
     getRecipe,
+    getSearchRecipe,
   };
 };
 
