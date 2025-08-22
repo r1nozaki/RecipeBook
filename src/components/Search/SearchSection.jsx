@@ -8,9 +8,11 @@ const SearchSection = ({ searchQuery }) => {
   const { process, setProcess, getSearchRecipe } = DishesService();
   useEffect(() => {
     if (!searchQuery) {
-      setSearchResult([]);
-      setProcess('confirmed');
-      return;
+      return (
+        <div className='min-h-screen flex items-center justify-center text-2xl'>
+          Введіть пошуковий запит 🔎
+        </div>
+      );
     }
 
     setProcess('loading');

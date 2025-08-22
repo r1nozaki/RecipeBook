@@ -1,12 +1,20 @@
 import { FiSearch } from 'react-icons/fi';
 import { useNavigate } from 'react-router';
+import { useState } from 'react';
 
-const SearchInput = ({ setSearchQuery }) => {
+const SearchInput = () => {
   const navigate = useNavigate();
+  const [query, setQuery] = useState('');
+
+  const handleSearch = () => {
+    if (query.trim()) {
+      navigate(`/search?query=${encodeURIComponent(query)}`);
+    }
+  };
 
   const handleKeyDown = e => {
     if (e.key === 'Enter') {
-      navigate('/search');
+      handleSearch();
     }
   };
 
@@ -16,12 +24,11 @@ const SearchInput = ({ setSearchQuery }) => {
         type='search'
         className='bg-[#F5F2F2] rounded-3xl h-11 w-64.5 pl-12 pr-2'
         placeholder='Search for recipe'
-        onChange={e => {
-          setSearchQuery(e.target.value);
-        }}
+        value={query}
+        onChange={e => setQuery(e.target.value)}
         onKeyDown={handleKeyDown}
       />
-      <button onClick={() => navigate('/search')} className='hover:cursor-pointer'>
+      <button onClick={handleSearch} className='hover:cursor-pointer'>
         <FiSearch className='absolute top-3 left-5' size={20} />
       </button>
     </div>

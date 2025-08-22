@@ -5,7 +5,7 @@ const setContent = (process, renderFunction) => {
     case 'idle':
     case 'loading':
       return (
-        <div className='flex justify-center items-center w-full h-80 '>
+        <div className='flex justify-center items-center w-full h-80  mt-10'>
           <PuffLoader color='#FFDB63' size={120} />
         </div>
       );
@@ -13,7 +13,7 @@ const setContent = (process, renderFunction) => {
       return renderFunction();
     case 'error':
       return (
-        <div className='flex justify-center items-center w-full h-80'>
+        <div className='flex justify-center items-center w-full h-80 mt-10'>
           <ErrorMessage />
         </div>
       );

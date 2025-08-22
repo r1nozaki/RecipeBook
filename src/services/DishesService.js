@@ -35,7 +35,9 @@ const DishesService = () => {
 
   const getSearchRecipe = async searchQuery => {
     const res = await request(
-      `${_apiBase}/complexSearch?query=${searchQuery}&number=2&addRecipeInformation=true&instructionsRequired=true&fillIngredients=true&sort=popularity&apiKey=${_apiKey}`
+      `${_apiBase}/complexSearch?query=${encodeURIComponent(
+        searchQuery
+      )}&number=5&addRecipeInformation=true&instructionsRequired=true&fillIngredients=true&sort=popularity&apiKey=${_apiKey}`
     );
     return res.results.map(_transformDishCard);
   };
@@ -45,7 +47,9 @@ const DishesService = () => {
       id: dish.id,
       image: dish.image,
       title: dish.title,
-      content: dish.summary.replace(/<[^>]+>/g, '').slice(0, 61) + '...',
+      content: dish.summary
+        ? dish.summary.replace(/<[^>]+>/g, '').slice(0, 61) + '...'
+        : 'No description available',
     };
   };
 

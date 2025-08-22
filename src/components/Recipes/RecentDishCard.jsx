@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router';
+import { addRecentRecipe } from '../../utils/addRecentRecipe';
 
 const RecentDishCard = ({ id, image, title, content }) => {
   const navigate = useNavigate();

@@ -1,5 +1,3 @@
-import { useNavigate } from 'react-router';
-
 export const addRecentRecipe = (recipe, navigate) => {
   const recent = JSON.parse(localStorage.getItem('recentDish')) || [];
   const filtered = recent.filter(d => d.id !== recipe.id);
