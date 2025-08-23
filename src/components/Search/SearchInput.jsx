@@ -1,9 +1,10 @@
 import { FiSearch } from 'react-icons/fi';
-import { useNavigate } from 'react-router';
-import { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router';
+import { useEffect, useState } from 'react';
 
 const SearchInput = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [query, setQuery] = useState('');
 
   const handleSearch = () => {
@@ -17,6 +18,12 @@ const SearchInput = () => {
       handleSearch();
     }
   };
+
+  useEffect(() => {
+    if (location.pathname === '/search') {
+      setQuery('');
+    }
+  }, [location]);
 
   return (
     <div className='relative'>
