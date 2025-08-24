@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router';
+import { useParams, Link } from 'react-router';
 import setContent from '../../utils/setContent';
 import DishesService from '../../services/DishesService';
 import Banner from '../Banner';
+import { FaArrowLeftLong } from 'react-icons/fa6';
 
 const RecipeDetails = () => {
   const { id } = useParams();
@@ -54,6 +55,11 @@ const RecipeDetails = () => {
           </div>
         </>
       ))}
+      <Link to='/search'>
+        <button className='flex items-center gap-2'>
+          <FaArrowLeftLong /> Back to recipe list
+        </button>
+      </Link>
     </section>
   );
 };

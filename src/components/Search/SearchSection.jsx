@@ -29,7 +29,7 @@ const SearchSection = ({ searchQuery }) => {
   return (
     <section className='min-h-screen'>
       {setContent(process, () => (
-        <div className='flex flex-col gap-6 w-full px-32 justify-center items-center mt-16'>
+        <div className='flex flex-col gap-6 w-full px-32 justify-center items-center mt-16 mb-29'>
           {searchResult.length > 0 ? (
             searchResult.map(searchDish => (
               <RecentDishCard

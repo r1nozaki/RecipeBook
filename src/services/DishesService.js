@@ -67,6 +67,17 @@ const DishesService = () => {
     };
   };
 
+  const _transformSearchedRecipe = dish => {
+    return {
+      id: dish.id,
+      image: dish.image,
+      title: dish.title,
+      content: dish.summary
+        ? dish.summary.replace(/<[^>]+>/g, '').slice(0, 151) + '...'
+        : 'No description available',
+    };
+  };
+
   return {
     clearError,
     process,
