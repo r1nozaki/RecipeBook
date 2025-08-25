@@ -18,8 +18,8 @@ const RecentDishCard = ({ id, image, title, content }) => {
         />
       </div>
       <div className='p-12'>
-        <h2>{title}</h2>
-        <p>{content}</p>
+        <h2 className='text-2xl font-bold h-15 mb-3'>{title}</h2>
+        <p className='text-lg'>{content}</p>
         <button
           onClick={seeRecipe}
           className='w-45 h-10 rounded-xl bg-yellow-300 text-center mt-12 text-lg font-bold transition duration-300 ease-in-out transform hover:scale-105 hover:bg-yellow-400 hover:cursor-pointer'
