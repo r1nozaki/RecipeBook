@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router';
+import { useParams, Link, useNavigate } from 'react-router';
 import setContent from '../../utils/setContent';
 import DishesService from '../../services/DishesService';
 import Banner from '../Banner';
+import { FaArrowLeftLong } from 'react-icons/fa6';
 
 const RecipeDetails = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const { process, setProcess, getRecipe } = DishesService();
   const [recipe, setRecipe] = useState({
@@ -54,6 +56,14 @@ const RecipeDetails = () => {
           </div>
         </>
       ))}
+      <div className='mt-10 pl-32'>
+        <div
+          onClick={() => navigate(-1)}
+          className='flex gap-2 items-center text-lg text-semibold hover:cursor-pointer transition transform duration-300 easy-in-out hover:scale-110 w-40'
+        >
+          <FaArrowLeftLong size={20} /> Back to recipes
+        </div>
+      </div>
     </section>
   );
 };

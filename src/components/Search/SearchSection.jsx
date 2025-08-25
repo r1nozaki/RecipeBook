@@ -5,6 +5,7 @@ import setContent from '../../utils/setContent';
 
 const SearchSection = ({ searchQuery }) => {
   const [searchResult, setSearchResult] = useState([]);
+
   const { process, setProcess, getSearchRecipe } = DishesService();
   useEffect(() => {
     if (!searchQuery) {

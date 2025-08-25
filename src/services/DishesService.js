@@ -37,9 +37,9 @@ const DishesService = () => {
     const res = await request(
       `${_apiBase}/complexSearch?query=${encodeURIComponent(
         searchQuery
-      )}&number=5&addRecipeInformation=true&instructionsRequired=true&fillIngredients=true&sort=popularity&apiKey=${_apiKey}`
+      )}&number=20&addRecipeInformation=true&instructionsRequired=true&fillIngredients=true&sort=popularity&apiKey=${_apiKey}`
     );
-    return res.results.map(_transformDishCard);
+    return res.results.map(_transformSearchedRecipe);
   };
 
   const _transformDishCard = dish => {
